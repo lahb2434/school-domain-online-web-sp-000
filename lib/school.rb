@@ -19,4 +19,10 @@ class School
     else
       puts "For how long you've gone to school you should know this grade doesn't exist, sheesh."
     end
+    
+    def grade(grade)
+      @roster[grade]
+    end
+    
+    
   end
