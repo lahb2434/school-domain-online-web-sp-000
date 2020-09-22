@@ -3,22 +3,18 @@ class School
   
   attr_accessor 
   attr_reader :school
+  @roster = {}
   
   def initialize(school)
     @school = school
-    @roster = {}
   end
 
   def add_student(name, grade)
-    if (1..12).include? grade
-      if @roster.has_key?(grade)
-         @roster[grade] << name
-      else
-         @roster[grade] = []
-         @roster[grade] << name
-      end
+    if @roster.has_key?(grade)
+      @roster[grade] << name
     else
-      puts "For how long you've gone to school you should know this grade doesn't exist, sheesh."
+      @roster[grade] = []
+      @roster[grade] << name
     end
   end
     
