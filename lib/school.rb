@@ -1,12 +1,22 @@
-def dumb(name, grade)
-   if (1..12).include? grade
-      if @a.has_key?(grade)
-         @a[grade] << name
+
+class School
+  
+  attr_accessor 
+  attr_reader :school
+  
+  def initialize(school)
+    @school = school
+    @roster = {}
+
+  def add_student(name, grade)
+    if (1..12).include? grade
+      if @roster.has_key?(grade)
+         @roster[grade] << name
       else
-         @a[grade] = []
-         @a[grade] << name
+         @roster[grade] = []
+         @roster[grade] << name
       end
-   else
-      puts "Grade out of scope"
-   end
-end# code here!
+    else
+      puts "For how long you've gone to school you should know this grade doesn't exist, sheesh."
+    end
+  end
