@@ -7,6 +7,7 @@ class School
   def initialize(school)
     @school = school
     @roster = {}
+  end
 
   def add_student(name, grade)
     if (1..12).include? grade
@@ -24,5 +25,4 @@ class School
       @roster[grade]
     end
     
-  end
   end
